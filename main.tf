@@ -50,6 +50,6 @@ resource "azurerm_route_table" "example" {
 }
 
 resource "azurerm_subnet_route_table_association" "default" {
-  subnet_id      = azurerm_subnet.default.id
+  subnet_id      = azurerm_virtual_network.default.id
   route_table_id = azurerm_route_table.example.id
 }
