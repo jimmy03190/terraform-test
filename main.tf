@@ -35,17 +35,17 @@ resource "azurerm_route_table" "example" {
   disable_bgp_route_propagation = false
 
   route {
-    name                  = "route1"
-    address_prefix        = "10.0.0.0/8"
-    next_hop_type         = "VirtualAppliance"
-    next_hop_in_ip_addres = "10.140.11.200"
+    name                   = "route1"
+    address_prefix         = "10.0.0.0/8"
+    next_hop_type          = "VirtualAppliance"
+    next_hop_in_ip_address = "10.140.11.200"
   }
 
   route {
-    name                  = "route2"
-    address_prefix        = "150.70.0.0/16"
-    next_hop_type         = "VirtualAppliance"
-    next_hop_in_ip_addres = "10.140.11.200"
+    name                   = "route2"
+    address_prefix         = "150.70.0.0/16"
+    next_hop_type          = "VirtualAppliance"
+    next_hop_in_ip_address = "10.140.11.200"
   }
 }
 
