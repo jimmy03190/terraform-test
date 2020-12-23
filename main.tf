@@ -7,7 +7,7 @@ provider "azurerm" {
 
 # Create a resource group
 resource "azurerm_resource_group" "example" {
-  name     = "jimmy_rg_vnet"
+  name     = "resource_group_name"
   location = "West US 2"
 }
 
@@ -31,7 +31,7 @@ resource "azurerm_subnet" "example" {
 }
 
 resource "azurerm_route_table" "example" {
-  name                          = "acceptanceTestSecurityGroup1"
+  name                          = "route_table_name"
   location                      = azurerm_resource_group.example.location
   resource_group_name           = azurerm_resource_group.example.name
   disable_bgp_route_propagation = false
