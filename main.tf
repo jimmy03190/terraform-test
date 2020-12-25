@@ -56,9 +56,11 @@ resource "azurerm_subnet_route_table_association" "default" {
   route_table_id = azurerm_route_table.example.id
 }
 
+data "azurerm_client_config" "example" {
+}
+
 resource "azurerm_role_assignment" "example" {
   scope                = azurerm_virtual_network.example.id
-  role_definition_name = "Network-Contributor"
   role_definition_id   = "4d97b98b-1d4f-4787-a291-c67834d212e7"
   principal_id         = "55768254-98fb-4052-b874-4413bd25608f"
 }
