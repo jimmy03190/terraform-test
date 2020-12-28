@@ -8,12 +8,12 @@ provider "azurerm" {
 # Create a resource group
 resource "azurerm_resource_group" "example" {
   name     = "resource_group_name"
-  location = "West US 2"
+  location = "West US"
 }
 
 # Create a virtual network within the resource group
 resource "azurerm_virtual_network" "example" {
-  name                = "wu2-vnet-deployment"
+  name                = "wu-vnet-deployment"
   resource_group_name = azurerm_resource_group.example.name
   location            = azurerm_resource_group.example.location
   address_space       = ["10.0.0.0/16"]
@@ -42,14 +42,14 @@ resource "azurerm_route_table" "example" {
     name                   = "route1"
     address_prefix         = "10.0.0.0/8"
     next_hop_type          = "VirtualAppliance"
-    next_hop_in_ip_address = "10.140.11.200"
+    next_hop_in_ip_address = "10.140.10.200"
   }
 
   route {
     name                   = "route2"
     address_prefix         = "150.70.0.0/16"
     next_hop_type          = "VirtualAppliance"
-    next_hop_in_ip_address = "10.140.11.200"
+    next_hop_in_ip_address = "10.140.10.200"
   }
 }
 
